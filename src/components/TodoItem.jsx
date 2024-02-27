@@ -1,9 +1,18 @@
 /* eslint-disable react/prop-types */
 import { Icon } from '@iconify/react';
-import { Typography, ListItem, Checkbox, IconButton, Box } from '@mui/material';
+import {
+  useTheme,
+  Typography,
+  ListItem,
+  Checkbox,
+  IconButton,
+  Box,
+} from '@mui/material';
 
 const TodoItem = ({ id, title, completed, toggleTodo, deleteTodo }) => {
   const handleToggle = ({ target: { checked } }) => toggleTodo(id, checked);
+
+  const theme = useTheme();
 
   return (
     <ListItem
@@ -11,7 +20,7 @@ const TodoItem = ({ id, title, completed, toggleTodo, deleteTodo }) => {
         display: 'flex',
         justifyContent: 'space-between',
         width: '100%',
-        bgcolor: 'itemBox.main',
+        bgcolor: 'primary.light',
         borderRadius: '0.8rem',
       }}
     >
@@ -19,7 +28,9 @@ const TodoItem = ({ id, title, completed, toggleTodo, deleteTodo }) => {
         <Checkbox
           checked={completed}
           onChange={handleToggle}
-          color='checkbox'
+          sx={{
+            color: theme.palette.secondary.main,
+          }}
         />
         <Typography
           variant='subtitle1'
@@ -36,7 +47,7 @@ const TodoItem = ({ id, title, completed, toggleTodo, deleteTodo }) => {
       <Box>
         <IconButton
           variant='contained'
-          color='delete'
+          color='error'
           onClick={() => deleteTodo(id)}
         >
           <Icon icon='fluent:delete-12-regular' />

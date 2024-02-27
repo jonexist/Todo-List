@@ -27,7 +27,7 @@ const TodoForm = ({ addTodo }) => {
           width: '100%',
           my: '0.5rem',
           borderRadius: '1rem',
-          bgcolor: 'white',
+          bgcolor: 'primary.light',
         }}
         error={error}
         helperText={error ? 'Task description cannot be empty' : ''}

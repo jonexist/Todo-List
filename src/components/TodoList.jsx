@@ -35,7 +35,7 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
               display: 'flex',
               flexDirection: 'column',
               gap: '1rem',
-              bgcolor: 'listContainer.main',
+              bgcolor: 'secondary.light',
               borderRadius: '1.5rem',
               padding: '1rem',
             }
