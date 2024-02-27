@@ -36,7 +36,7 @@ const TodoComponent = ({ addTask, todos, toggleTodo, deleteTodo }) => {
               color={'secondary'}
               sx={{ fontWeight: '900' }}
             >
-              Task List
+              MUI React
             </Typography>
             <img
               src={TaskPng}
