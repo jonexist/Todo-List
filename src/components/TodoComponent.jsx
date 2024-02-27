@@ -14,7 +14,7 @@ const TodoComponent = ({ addTask, todos, toggleTodo, deleteTodo }) => {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          height: '100vh',
+          height: '100dvh',
           p: '1rem',
         }}
       >
