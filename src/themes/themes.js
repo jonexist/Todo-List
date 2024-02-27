@@ -4,21 +4,15 @@ const theme = createTheme({
   palette: {
     primary: {
       main: '#404258',
+      light: '#FFFFFF',
+      dark: '#24242D',
     },
     secondary: {
       main: '#474E68',
+      light: '#EEEDEB',
     },
-    checkbox: {
-      main: '#24242D',
-    },
-    delete: {
+    error: {
       main: '#EF4040',
-    },
-    itemBox: {
-      main: '#FFFFFF',
-    },
-    listContainer: {
-      main: '#EEEDEB',
     },
   },
   typography: {
