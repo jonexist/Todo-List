@@ -27,10 +27,13 @@ const EmptyState = () => (
 );
 
 const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
+  const hasTodos = todos.length > 0;
+  const sortedTodos = todos.slice().sort((a, b) => a.completed - b.completed);
+
   return (
     <List
       sx={
-        todos.length
+        hasTodos
           ? {
               display: 'flex',
               flexDirection: 'column',
@@ -42,10 +45,8 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
           : {}
       }
     >
-      {todos.length === 0 ? (
-        <EmptyState />
-      ) : (
-        todos.map(({ id, ...todo }) => (
+      {hasTodos ? (
+        sortedTodos.map(({ id, ...todo }) => (
           <TodoItem
             key={id}
             id={id}
@@ -54,6 +55,8 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
             deleteTodo={deleteTodo}
           />
         ))
+      ) : (
+        <EmptyState />
       )}
     </List>
   );
